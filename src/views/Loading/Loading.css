@@ -1,0 +1,87 @@
+/* Animazione loading con movimento verticale + rotazione 3D orizzontale */
+@keyframes loading {
+  0% {
+    transform: translateY(0px) rotateY(0deg);
+  }
+  25% {
+    transform: translateY(10px) rotateY(90deg);
+  }
+  50% {
+    transform: translateY(20px) rotateY(180deg);
+  }
+  75% {
+    transform: translateY(10px) rotateY(270deg);
+  }
+  100% {
+    transform: translateY(0px) rotateY(360deg);
+  }
+}
+
+/* Animazione pulse glow azzurro molto sottile che segue la forma del PokeNav */
+@keyframes loaded {
+  0% {
+    filter: drop-shadow(0 0 8px rgba(0, 191, 255, 0.15))
+      drop-shadow(0 0 16px rgba(0, 191, 255, 0.1));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(0, 191, 255, 0.25))
+      drop-shadow(0 0 24px rgba(0, 191, 255, 0.15))
+      drop-shadow(0 0 36px rgba(0, 150, 255, 0.1));
+    transform: scale(1.02);
+  }
+  100% {
+    filter: drop-shadow(0 0 8px rgba(0, 191, 255, 0.15))
+      drop-shadow(0 0 16px rgba(0, 191, 255, 0.1));
+    transform: scale(1);
+  }
+}
+
+.loading-img {
+  height: 300px;
+  width: 300px;
+  transition: all 0.5s ease-in-out;
+}
+
+.loading {
+  animation: loading 3s ease-in-out infinite;
+  /* Abilita la renderizzazione 3D per un effetto più realistico */
+  transform-style: preserve-3d;
+  /* Aggiunge prospettiva per enfatizzare l'effetto 3D */
+  perspective: 1000px;
+}
+
+.loaded {
+  animation: loaded 2.5s ease-in-out infinite;
+  /* Transizione fluida per l'effetto hover */
+  transition: all 0.3s ease-out;
+}
+
+/* Effetto hover: scale 1.1 + glow massimo */
+.loaded.clickable:hover {
+  /* Forziamo gli stili hover sopra l'animazione */
+  transform: scale(1.1) !important;
+  filter: drop-shadow(0 0 12px rgba(0, 191, 255, 0.25))
+    drop-shadow(0 0 24px rgba(0, 191, 255, 0.15))
+    drop-shadow(0 0 36px rgba(0, 150, 255, 0.1)) !important;
+}
+
+.click-hint {
+  margin-top: var(--spacing-lg);
+  color: var(--color-text-secondary);
+  font-size: var(--text-base);
+  font-weight: 500;
+  animation: pulse 2s infinite;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+@keyframes pulse {
+  0%, 100% { 
+    opacity: 0.7; 
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 1; 
+    transform: scale(1.02);
+  }
+}
