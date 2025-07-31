@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# Pokédex Frontend con React.js
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Questa è un'applicazione web frontend costruita in React.js che funge da enciclopedia Pokémon (Pokédex). Interagisce con un [progetto backend custom](https://github.com/tuo-username/pokemon-api) per recuperare e visualizzare i dati dei Pokémon.
 
-## Available Scripts
+## 📸 Screenshot
 
-In the project directory, you can run:
+*(Inserisci qui uno o più screenshot dell'applicazione in funzione per mostrare l'interfaccia utente.)*
 
-### `npm start`
+## ✨ Funzionalità
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Dall'analisi del codice, il progetto include le seguenti funzionalità:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+-   **Ricerca Pokémon**: Cerca un Pokémon specifico per nome.
+-   **Filtri Multipli**:
+    -   Filtra i Pokémon per **Tipo** (es. Fuoco, Acqua, Erba).
+    -   Filtra i Pokémon per **Generazione**.
+    -   Filtra per **Catena Evolutiva**.
+-   **Lista Pokémon**: Visualizza una lista completa e paginata di tutti i Pokémon.
+-   **Dettagli Pokémon**: Cliccando su un Pokémon, si accede a una pagina di dettaglio che mostra:
+    -   Statistiche di base.
+    -   Abilità.
+    -   La sua catena evolutiva completa.
+    -   Un'analisi delle debolezze e resistenze del suo tipo.
+-   **State Management**: Gestione centralizzata dello stato dell'applicazione tramite Redux Toolkit.
 
-### `npm test`
+## 🚀 Tecnologie Utilizzate
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-   **Frontend**:
+    -   [React.js](https://reactjs.org/)
+    -   [Redux Toolkit](https://redux-toolkit.js.org/) per la gestione dello stato.
+    -   CSS standard per lo styling.
+-   **Backend**:
+    -   Questa applicazione è progettata per funzionare con un'API Pokémon custom. Assicurati che il server backend sia in esecuzione e accessibile.
 
-### `npm run build`
+## 🏁 Iniziare
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Segui questi passaggi per avviare il progetto in locale.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisiti
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-   Node.js (versione 14 o superiore)
+-   npm
+-   Il server del [progetto backend](https://github.com/tuo-username/pokemon-api) deve essere in esecuzione.
 
-### `npm run eject`
+### Installazione
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1.  **Clona il repository:**
+    ```sh
+    git clone https://github.com/tuo-username/pokedex-frontend.git
+    ```
+2.  **Entra nella directory del progetto:**
+    ```sh
+    cd pokedex-frontend
+    ```
+3.  **Installa le dipendenze:**
+    ```sh
+    npm install
+    ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Configurazione
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+L'applicazione ha bisogno di sapere l'URL base della tua API backend.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1.  Crea un file `.env` nella root del progetto:
+    ```sh
+    touch .env
+    ```
+2.  Aggiungi la seguente variabile d'ambiente al file `.env`, sostituendo l'URL con quello corretto del tuo backend:
+    ```
+    REACT_APP_API_URL=http://localhost:8000/api
+    ```
 
-## Learn More
+### Avvio
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Per avviare l'applicazione in modalità di sviluppo:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```sh
+npm start
+```
 
-### Code Splitting
+Apri [http://localhost:3000](http://localhost:3000) per vederla nel tuo browser.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📜 Script Disponibili
 
-### Analyzing the Bundle Size
+Nel progetto, puoi eseguire i seguenti script:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+-   `npm start`: Avvia l'app in modalità sviluppo.
+-   `npm test`: Esegue i test in modalità interattiva.
+-   `npm run build`: Compila l'app per la produzione nella cartella `build`.
 
-### Making a Progressive Web App
+## 📄 Licenza
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Questo progetto è rilasciato sotto la Licenza MIT. Vedi il file `LICENSE` per maggiori dettagli.
