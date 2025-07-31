@@ -25,10 +25,9 @@ function GenerationFilter() {
   };
 
   return (
-    <div className="generation-filter modern-filter-container">
-      <div className="filter-header-modern">
-        <div className="filter-icon">🏛️</div>
-        <label htmlFor="generation-select" className="filter-label-modern">
+    <div className="generation-filter">
+      <div className="filter-header">
+        <label htmlFor="generation-select" className="filter-label">
           Generation
         </label>
       </div>

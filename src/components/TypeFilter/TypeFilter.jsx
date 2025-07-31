@@ -56,10 +56,9 @@ function TypeFilter() {
   };
 
   return (
-    <div className="type-filter modern-filter-container">
-      <div className="filter-header-modern">
-        <div className="filter-icon">⚡</div>
-        <label className="filter-label-modern">
+    <div className="type-filter">
+      <div className="filter-header">
+        <label className="filter-label">
           Types {selectedTypes.length > 0 && `(${selectedTypes.join(', ')})`}
         </label>
         {selectedTypes.length > 0 && (
@@ -76,8 +75,9 @@ function TypeFilter() {
             onClick={() => handleTypeToggle(type)}
             className={`type-btn ${selectedTypes.includes(type) ? 'selected' : ''}`}
             style={{ 
-              backgroundColor: selectedTypes.includes(type) ? getTypeColor(type) : 'var(--color-secondary)',
-              borderColor: selectedTypes.includes(type) ? getTypeColor(type) : 'var(--color-border)'
+              backgroundColor: selectedTypes.includes(type) ? getTypeColor(type) : 'var(--color-primary)',
+              borderColor: selectedTypes.includes(type) ? getTypeColor(type) : 'var(--color-border)',
+              color: selectedTypes.includes(type) ? 'white' : 'var(--color-text-primary)'
             }}
             disabled={!selectedTypes.includes(type) && selectedTypes.length >= 2}
           >

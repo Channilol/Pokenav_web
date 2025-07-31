@@ -25,7 +25,6 @@ export default function Loading({ loadingState }) {
       const res = await fetch(`${url}/api/pokemon`);
       if (res.ok) {
         const data = await res.json();
-        console.log(data);
         dispatch(setPokemon(data));
       }
       setLoading(false);
@@ -50,12 +49,12 @@ export default function Loading({ loadingState }) {
 
   const handleImageClick = () => {
     if (success) {
-      navigate('/pokemon');
+      navigate("/pokemon");
     }
   };
 
-  // Only show Outlet if we're on /pokemon route AND success is true
-  const isOnPokemonRoute = window.location.pathname === '/pokemon';
+  // Only show Outlet if we're on /pokemon route (including detail pages) AND success is true
+  const isOnPokemonRoute = window.location.pathname.startsWith("/pokemon");
 
   if (isOnPokemonRoute && success) {
     return <Outlet />;
@@ -63,23 +62,70 @@ export default function Loading({ loadingState }) {
 
   return (
     <>
-      <h1>
-        {!loading && success
-          ? "Ready to start!"
-          : !loading && !success
-          ? "Error..."
-          : "Loading pokemons..."}
-      </h1>
-      <img
-        className={`loading-img ${loading ? "loading" : "loaded"} ${success ? "clickable" : ""}`}
-        src={logo}
-        alt="logo"
-        onClick={handleImageClick}
-        style={{ cursor: success ? 'pointer' : 'default' }}
-      />
-      {success && (
-        <p className="click-hint">Click the image to start exploring!</p>
-      )}
+      <div className="loading-background">
+        <div className="particles">
+          {[...Array(20)].map((_, i) => (
+            <div key={i} className={`particle particle-${i + 1}`}></div>
+          ))}
+        </div>
+      </div>
+
+      <div className="loading-container">
+        <div className="loading-content">
+          <div className="logo-container">
+            <img
+              className={`loading-img ${loading ? "loading" : "loaded"} ${
+                success ? "clickable" : ""
+              }`}
+              src={logo}
+              alt="logo"
+              onClick={handleImageClick}
+              style={{ cursor: success ? "pointer" : "default" }}
+            />
+            {loading && (
+              <div className="progress-ring">
+                <div className="progress-circle"></div>
+              </div>
+            )}
+          </div>
+
+          <div className="text-container">
+            <h1
+              className={`loading-title ${
+                !loading && success
+                  ? "success"
+                  : !loading && !success
+                  ? "error"
+                  : "loading"
+              }`}
+            >
+              {!loading && success
+                ? "Ready to start!"
+                : !loading && !success
+                ? "Connection failed"
+                : "Loading Pokédex..."}
+            </h1>
+
+            {loading && (
+              <div className="loading-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            )}
+
+            {!loading && !success && (
+              <p className="error-message">
+                Check your connection and try again
+              </p>
+            )}
+
+            {success && (
+              <p className="click-hint">Click the logo to start exploring!</p>
+            )}
+          </div>
+        </div>
+      </div>
     </>
   );
 }

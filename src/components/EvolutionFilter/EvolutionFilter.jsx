@@ -31,10 +31,9 @@ function EvolutionFilter() {
   };
 
   return (
-    <div className="evolution-filter modern-filter-container">
-      <div className="filter-header-modern">
-        <div className="filter-icon">🔄</div>
-        <label className="filter-label-modern">
+    <div className="evolution-filter">
+      <div className="filter-header">
+        <label className="filter-label">
           Evolution Stage
         </label>
         <div className="filter-actions">
