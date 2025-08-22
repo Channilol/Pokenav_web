@@ -1,6 +1,6 @@
 # Pokédex Frontend con React.js
 
-Questa è un'applicazione web frontend costruita in React.js che funge da enciclopedia Pokémon (Pokédex). Interagisce con un [progetto backend custom](https://github.com/tuo-username/pokemon-api) per recuperare e visualizzare i dati dei Pokémon.
+Questa è un'applicazione web frontend costruita in React.js che funge da enciclopedia Pokémon (Pokédex). Interagisce con un [progetto backend custom](https://github.com/Channilol/PokedexApi_backend) per recuperare e visualizzare i dati dei Pokémon.
 
 ## 📸 Screenshot
 
@@ -40,7 +40,7 @@ Segui questi passaggi per avviare il progetto in locale.
 
 -   Node.js (versione 14 o superiore)
 -   npm
--   Il server del [progetto backend](https://github.com/tuo-username/pokemon-api) deve essere in esecuzione.
+-   Il server del [progetto backend](https://github.com/Channilol/PokedexApi_backend) deve essere in esecuzione.
 
 ### Installazione
 
