@@ -4,7 +4,7 @@ Questa è un'applicazione web frontend costruita in React.js che funge da encicl
 
 ## 📸 Screenshot
 
-*(Inserisci qui uno o più screenshot dell'applicazione in funzione per mostrare l'interfaccia utente.)*
+*Coming soon...*
 
 ## ✨ Funzionalità
 
@@ -46,7 +46,7 @@ Segui questi passaggi per avviare il progetto in locale.
 
 1.  **Clona il repository:**
     ```sh
-    git clone https://github.com/tuo-username/pokedex-frontend.git
+    git clone https://github.com/Channilol/Pokenav_web.git
     ```
 2.  **Entra nella directory del progetto:**
     ```sh
