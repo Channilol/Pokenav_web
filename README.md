@@ -57,19 +57,6 @@ Segui questi passaggi per avviare il progetto in locale.
     npm install
     ```
 
-### Configurazione
-
-L'applicazione ha bisogno di sapere l'URL base della tua API backend.
-
-1.  Crea un file `.env` nella root del progetto:
-    ```sh
-    touch .env
-    ```
-2.  Aggiungi la seguente variabile d'ambiente al file `.env`, sostituendo l'URL con quello corretto del tuo backend:
-    ```
-    REACT_APP_API_URL=http://localhost:8000/api
-    ```
-
 ### Avvio
 
 Per avviare l'applicazione in modalità di sviluppo:
