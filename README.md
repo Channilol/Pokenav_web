@@ -2,9 +2,8 @@
 
 Questa è un'applicazione web frontend costruita in React.js che funge da enciclopedia Pokémon (Pokédex). Interagisce con un [progetto backend custom](https://github.com/Channilol/PokedexApi_backend) per recuperare e visualizzare i dati dei Pokémon.
 
-## 📸 Screenshot
-
-*Coming soon...*
+## 📸 Preview
+![Demo App Flutter](https://i.ibb.co/270sbk2P/Pokenav-Web.gif)
 
 ## ✨ Funzionalità
 
